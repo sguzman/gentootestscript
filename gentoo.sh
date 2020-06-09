@@ -71,5 +71,5 @@ mount --make-rslave /mnt/gentoo/sys
 mount --rbind /dev /mnt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev
 
-chroot /mnt/gentoo /root/local/chroot.sh
+chroot /mnt/gentoo bash -x /root/local/chroot.sh
 ##### Chroot from here on now
