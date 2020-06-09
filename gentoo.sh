@@ -52,7 +52,7 @@ cp --verbose /local/gentoo/portage/my.minimal.conf /mnt/gentoo/etc/portage/make.
 
 cp /local/gentoo/kernel/gentoohardenedminimal /mnt/gentoo/gentoohardenedminimal
 
-mirrorselect -i -o >> /mnt/gentoo/etc/portage/make.conf
+mirrorselect --servers 5 --deep --debug 9 --country 'USA' --output >> /mnt/gentoo/etc/portage/make.conf
 
 mkdir --parents /mnt/gentoo/etc/portage/repos.conf
 cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
