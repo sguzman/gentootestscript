@@ -47,7 +47,7 @@ mount /dev/sda2 /mnt/gentoo
 
 cd /mnt/gentoo
 # Download hardened Stage 3 Tar
-wget --debug --verbose -O stage3-amd64-hardened.tar.xz 'https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20200607T214504Z/hardened/stage3-amd64-hardened-20200607T214504Z.tar.xz'
+wget --debug --verbose -O stage3-amd64-hardened.tar.xz 'http://mirrors.evowise.com/gentoo/releases/amd64/autobuilds/current-stage3-amd64-hardened/stage3-amd64-hardened-20200119T214502Z.tar.xz'
 #UnTar Stage 3
 tar xpvf stage3-amd64-hardened.tar.xz --xattrs-include='*.*' --numeric-owner
 
