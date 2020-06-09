@@ -53,7 +53,7 @@ tar xpvf stage3-amd64-hardened-20200607T214504Z.tar.xz --xattrs-include='*.*' --
 
 ntpd -q -g
 
-mkdir --parents /mnt/gentoo/etc/portage/defaults
+mkdir --verbose --parents /mnt/gentoo/etc/portage/defaults
 mv --verbose /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/defaults/
 
 cp --verbose /root/local/gentoo/portage/my.minimal.conf /mnt/gentoo/etc/portage/make.conf
@@ -63,7 +63,7 @@ mirrorselect --servers 5 --deep --debug 9 --country 'USA' --output >> /mnt/gento
 
 mkdir --parents /mnt/gentoo/etc/portage/repos.conf
 cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
-cp --dereference /etc/resolve.conf /mnt/gentoo/etc/resolve.conf
+cp --verbose --dereference /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
 
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
