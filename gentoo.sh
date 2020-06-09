@@ -40,15 +40,15 @@ mount /dev/sda2 /mnt/gentoo
 
 cd /mnt/gentoo
 # Download hardened Stage 3 Tar
-wget --verbose --output stage3-amd64-hardened.tar.xz 'https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20200607T214504Z/hardened/stage3-amd64-hardened-20200607T214504Z.tar.xz'
+wget --verbose --output-file stage3-amd64-hardened.tar.xz 'https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20200607T214504Z/hardened/stage3-amd64-hardened-20200607T214504Z.tar.xz'
 #UnTar Stage 3
 tar xpvf stage3-amd64-hardened.tar.xz --xattrs-include='*.*' --numeric-owner
 
 ntpd -q -g
 
 mkdir --parents /mnt/gentoo/etc/portage/defaults
-mv /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/defaults/
-cp /local/gentoo/portage/my.minimal.conf /mnt/gentoo/etc/portage/make.conf
+mv --verbose /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/defaults/
+cp --verbose /local/gentoo/portage/my.minimal.conf /mnt/gentoo/etc/portage/make.conf
 
 cp /local/gentoo/kernel/gentoohardenedminimal /mnt/gentoo/gentoohardenedminimal
 
