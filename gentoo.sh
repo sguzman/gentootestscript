@@ -68,7 +68,7 @@ cp --verbose --dereference /etc/resolv.conf /mnt/gentoo/etc/resolv.conf
 mount --types proc /proc /mnt/gentoo/proc
 mount --rbind /sys /mnt/gentoo/sys
 mount --make-rslave /mnt/gentoo/sys
-mount --rbind /dev /mt/gentoo/dev
+mount --rbind /dev /mnt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev
 
 chroot /mnt/gentoo /root/local/chroot.sh
