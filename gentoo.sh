@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/bin/bash -x
+
+# Exit on first fail
+set -e
 
 # Following Mental Outlaw's Intalling Gentoo video
 echo 'Gentoo Installation script'
