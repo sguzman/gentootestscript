@@ -1,5 +1,9 @@
 #!/bin/bash -x
 
+yell() { echo "$0: $*" >&2; }
+die() { yell "$*"; exit 111; }
+try() { "$@" || die "cannot $*"; }
+
 # Exit on first fail
 set -e
 
