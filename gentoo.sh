@@ -48,9 +48,9 @@ ntpd -q -g
 
 mkdir --parents /mnt/gentoo/etc/portage/defaults
 mv --verbose /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/defaults/
-cp --verbose /local/gentoo/portage/my.minimal.conf /mnt/gentoo/etc/portage/make.conf
 
-cp /local/gentoo/kernel/gentoohardenedminimal /mnt/gentoo/gentoohardenedminimal
+cp --verbose /root/local/gentoo/portage/my.minimal.conf /mnt/gentoo/etc/portage/make.conf
+cp --verbose /root/local/gentoo/kernel/gentoohardenedminimal /mnt/gentoo/gentoohardenedminimal
 
 mirrorselect --servers 5 --deep --debug 9 --country 'USA' --output >> /mnt/gentoo/etc/portage/make.conf
 
@@ -64,5 +64,5 @@ mount --make-rslave /mnt/gentoo/sys
 mount --rbind /dev /mt/gentoo/dev
 mount --make-rslave /mnt/gentoo/dev
 
-chroot /mnt/gentoo ./gentootestscript-master/chroot.sh
+chroot /mnt/gentoo /root/local/chroot.sh
 ##### Chroot from here on now
