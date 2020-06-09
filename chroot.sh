@@ -37,8 +37,8 @@ cp /gentoohardenedminimal /usr/src/linux/.config
 make
 make modules_install
 
-echo '/dev/sda1\t\t/boot\t\text\t\tdefaults,noatime 0 2' >> /etc/fstab
-echo '/dev/sda2\t\t/\t\t\text\t\tnoatime 0 1' >> /etc/fstab
+echo '/dev/sda1\t\t/boot\t\text4\t\tdefaults,noatime 0 2' >> /etc/fstab
+echo '/dev/sda2\t\t/\t\text4\t\tnoatime 0 1' >> /etc/fstab
 
 echo 'hostname="Wittgenstein"' > /etc/conf.d/hostname
 

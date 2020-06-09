@@ -44,6 +44,7 @@ mkfs.ext4 /dev/sda2
 
 # Mount freshly made partition on current host
 mount /dev/sda2 /mnt/gentoo
+mount /dev/sda1 /mnt/gentoo/boot
 
 cd /mnt/gentoo
 # Download hardened Stage 3 Tar
