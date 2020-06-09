@@ -19,20 +19,16 @@ cd /mnt/gentoo
 
 # Download hardened Stage 3 Tar
 wget --verbose 'https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20200607T214504Z/hardened/stage3-amd64-hardened-20200607T214504Z.tar.xz'
-
-# Download Mental Outlaw's Gentoo scripts
-wget --verbose 'https://github.com/MentalOutlaw/deploygentoo/archive/master.zip'
-unzip gentootestscript-master.zip
-
 #UnTar Stage 3
 tar xpvf stage3-amd64-hardened-20200607T214504Z.tar.xz --xattrs-include='*.*' --numeric-owner
 
+# Download Mental Outlaw's Gentoo scripts
+wget --verbose 'https://github.com/sguzman/deploygentoo/archive/master.zip'
+unzip gentootestscript-master.zip
+
 mkdir /mnt/gentoo/etc/portage/defaults
 mv /mnt/gentoo/etc/portage/make.conf /mnt/gentoo/etc/portage/defaults/
-cd gentootestscript-master/gentoo/
-unzip portage.zip
+cp ./gentootestscript-master/gentoo/portage/my.minimal.conf /mnt/gentoo/etc/portage/make.conf
 
-
-
-
+cp ./gentootestscript-master/gentoo/kernel/gentoohardenedminimal /mnt/gentoo/gentoohardenedminimal
 
