@@ -74,4 +74,8 @@ mount --make-rslave /mnt/gentoo/dev
 cp --verbose /root/local/chroot.sh /mnt/gentoo/chroot.sh
 chmod +x /mnt/gentoo/chroot.sh
 chroot /mnt/gentoo /bin/bash -x /chroot.sh
-##### Chroot from here on now
+
+cd
+umount -l /mnt/gentoo/dev{/shm,/pts,}
+umount -R /mnt/gentoo
+#reboot
