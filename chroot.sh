@@ -63,5 +63,5 @@ grub-install /dev/sda
 grup-mkconfig -o /boot/grub/grub.cfg
 
 
-exit
+#exit
 bash
