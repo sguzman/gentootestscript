@@ -6,11 +6,11 @@ set -e
 source /etc/profile
 export PS1="(chroot) ${PS1}"
 
-emerge-webrsync --verbose --debug
-emerge --verbose --update --deep --newuse @world
-
 ls /usr/share/zoneinfo
 echo "America/Los_Angeles" > /etc/timezone
+
+emerge-webrsync --verbose --debug
+emerge --verbose --update --deep --newuse @world
 emerge --verbose --config sys-libs/timezone-data
 
 eselect profile list
