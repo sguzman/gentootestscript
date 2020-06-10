@@ -75,7 +75,9 @@ mount --make-rslave /mnt/gentoo/dev
 
 cp --verbose /root/local/chroot.sh /mnt/gentoo/chroot.sh
 chmod +x /mnt/gentoo/chroot.sh
-chroot /mnt/gentoo /bin/bash -x /chroot.sh
+
+echo 'Done here - chrooting...'
+chroot /mnt/gentoo/ /bin/bash -x /chroot.sh | tee /dev/stdout /chroot.log
 
 cd
 umount -l /mnt/gentoo/dev{/shm,/pts,}
