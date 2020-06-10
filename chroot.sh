@@ -5,14 +5,14 @@ set -e
 source /etc/profile
 export PS1="(chroot) ${PS1}"
 
+ls /usr/share/zoneinfo
+echo "America/Los_Angeles" > /etc/timezone
+emerge --verbose --config sys-libs/timezone-data
+
 emerge-webrsync --verbose --debug
 
 eselect profile list
 emerge --verbose --update --deep --newuse @world
-
-ls /usr/share/zoneinfo
-echo "America/Los_Angeles" > /etc/timezone
-emerge --verbose --config sys-libs/timezone-data
 
 echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
 echo 'LANG="en_US.UTF-8"' > /etc/env.d/02locale
