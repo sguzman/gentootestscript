@@ -77,9 +77,9 @@ cp --verbose /root/local/chroot.sh /mnt/gentoo/chroot.sh
 chmod +x /mnt/gentoo/chroot.sh
 
 echo 'Done here - chrooting...'
-chroot /mnt/gentoo/ /bin/bash -x /chroot.sh | tee /dev/stdout /chroot.log
+chroot /mnt/gentoo/ /bin/bash
 
-cd
-umount -l /mnt/gentoo/dev{/shm,/pts,}
-umount -R /mnt/gentoo
+#cd
+#umount -l /mnt/gentoo/dev{/shm,/pts,}
+#umount -R /mnt/gentoo
 #reboot

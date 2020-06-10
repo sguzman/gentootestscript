@@ -9,10 +9,6 @@ export PS1="(chroot) ${PS1}"
 ls /usr/share/zoneinfo
 echo "America/Los_Angeles" > /etc/timezone
 
-emerge-webrsync --verbose --debug
-emerge --verbose --update --deep --newuse @world
-emerge --verbose --config sys-libs/timezone-data
-
 eselect profile list
 
 echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
@@ -21,6 +17,10 @@ echo 'LC_COLLATE="C"' >> /etc/env.d/02locale
 
 locale-gen
 eselect locale list
+
+emerge-webrsync --verbose --debug
+emerge --verbose --update --deep --newuse @world
+emerge --verbose --config sys-libs/timezone-data
 
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
 
