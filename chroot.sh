@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+set -e
+
 source /etc/profile
 export PS1="(chroot) ${PS1}"
 
@@ -63,6 +65,6 @@ emerge --verbose sys-boot/grup:2
 grub-install /dev/sda
 grup-mkconfig -o /boot/grub/grub.cfg
 
-emerge --verbose app-admin/sudo
+
 exit
 bash
